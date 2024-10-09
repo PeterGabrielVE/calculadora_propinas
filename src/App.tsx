@@ -6,7 +6,9 @@ import useOrder from "./hooks/useOrder";
 import TipPercentageForm from './components/TipPercentageForm';
 
 function App() {
-  const { order, addItem, removeItem } = useOrder();
+
+  const { order, addItem, removeItem, tip, setTip } = useOrder();
+
   return (
     <>
       <header className="bg-teal-400 py-5">
@@ -25,7 +27,7 @@ function App() {
         </div>
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
           <OrderContent order={order} removeItem={removeItem} />
-          <TipPercentageForm />
+          <TipPercentageForm setTip={setTip} />
           <OrderTotals  order={order} />
         </div>
       </main>
